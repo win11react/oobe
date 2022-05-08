@@ -12,7 +12,7 @@
       href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <title>Windows 11 OOBE setup</title>
+    <title>Windows 11 OOBE Setup</title>
   </head>
   <body>
     <div class="white_blur_layer">
@@ -21,7 +21,6 @@
         <img alt="volume" id="volume" src="window11_oobe_volume.png" />
       </div>
       <div class="inner_fill_setup">
-        <div class="yes_button base">Yes</div>
         <div class="left">
           <img alt="left image" id="left_img" src="window11_oobe_region.png" />
         </div>
@@ -279,6 +278,10 @@
               }
             }
           });
+
+          yesButton.innerHTML(removeEventListener("click", (event) => {
+            yesButton.remove();
+          }));
         } else if (btnState === 3 || 4) {
           let nextBtnDiv = `<div class="next_button base">Next</div>`;
           nextButton.innerHTML = nextBtnDiv;
@@ -301,7 +304,9 @@
               skipButton.innerHTML = skipBtnDiv;
 
               skipButton.addEventListener("click", (event) => {
-                return;
+                skipButton.innerHTML(removeEventListener("click", (event) => {
+                  skipButton.remove();
+                }));
               });
             } else if (btnState === 4) {
               listOOBE.style.top = "132px";
@@ -324,6 +329,10 @@
               right.innerHTML = rightInner;
             }
           });
+
+          nextButton.innerHTML(removeEventListener("click", (event) => {
+            nextButton.remove();
+          }));
         }
       }
 
