@@ -259,9 +259,12 @@
           innerFillSetup.innerHTML = regionHTML;
 
           yesButton.addEventListener("click", (event) => {
+            yesButton.removeEventListener("click", (event) => {
+              yesButton.remove();
+            });
           });
         } else if (btnState === 1 || 2) {
-          let yesBtnDiv = `<div class="yes_button base">Yes</div>`;
+          let yesBtnDiv = `<div class="yes_button">Yes</div>`;
           yesButton.innerHTML = yesBtnDiv;
 
           yesButton.addEventListener("click", (event) => {
