@@ -52,7 +52,7 @@
 
         let mainHTMLLoad = document.querySelector('.main');
 
-        mainHTMLLoad.innerHTML = mainHTML;
+        mainHTMLLoad.innerHTML += mainHTML;
 
         let innerFillSetup = document.querySelector(".inner_fill_setup");
         if (btnState == 0) {
@@ -258,10 +258,10 @@
 
           
 
-          let test = innerFillSetup.innerHTML += regionHTML;
+          innerFillSetup.innerHTML += regionHTML;
 
           yesButton.addEventListener("click", (event) => {
-            return test;
+            return;
           });
         }
         if (btnState === 1 || 2) {
