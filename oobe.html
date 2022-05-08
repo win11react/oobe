@@ -56,7 +56,6 @@
 
         let innerFillSetup = document.querySelector(".inner_fill_setup");
         if (btnState == 0) {
-          yesButton.addEventListener("click", (event) => {
           let regionHTML = `
             <div class="yes_button base">Yes</div>
             <div class="left">
@@ -254,12 +253,12 @@
                   <div class="list_oobe_opt">Zimbabwe</div>
                 </div>
               </div>
+            </div>
           `;
 
           
 
           innerFillSetup.innerHTML = regionHTML;
-            });
         }
         if (btnState === 1 || 2) {
           let yesBtnDiv = `<div class="yes_button base">Yes</div>`;
