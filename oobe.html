@@ -246,15 +246,14 @@
 
       for (let btnState = 0; btnState <= 4; btnState++) {
         if (btnState === 0 || 1 || 2) {
+          // Define the button to be removed after Region setup
+          let removeRegionYesBtn = document.querySelector(".yes_button .base").remove();
+
           let yesBtnDiv = `<div class="yes_button base">Yes</div>`;
           yesButton.innerHTML = yesBtnDiv;
 
           yesButton.addEventListener("click", (event) => {
-            if (btnState === 0) {
-              // Define the button to be removed after Region setup
-              let removeRegionYesBtn = document.querySelector(".yes_button .base").remove();
-              return;
-            } else if (btnState === 1) {
+            if (btnState === 1) {
               listOOBE.style.top = "132px";
               listOOBE.style.height = "332px";
 
