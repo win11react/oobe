@@ -275,13 +275,13 @@
                     OOBEInput.focus();
                   };
                 }, 6100);
+
+                yesButton.innerHTML(removeEventListener("click", (event) => {
+                  yesButton.remove();
+                }));
               }
             }
           });
-
-          yesButton.innerHTML(removeEventListener("click", (event) => {
-            yesButton.remove();
-          }));
         } else if (btnState === 3 || 4) {
           let nextBtnDiv = `<div class="next_button base">Next</div>`;
           nextButton.innerHTML = nextBtnDiv;
@@ -327,12 +327,12 @@
                 </div>
               `;
               right.innerHTML = rightInner;
+
+              nextButton.innerHTML(removeEventListener("click", (event) => {
+                nextButton.remove();
+              }));
             }
           });
-
-          nextButton.innerHTML(removeEventListener("click", (event) => {
-            nextButton.remove();
-          }));
         }
       }
 
