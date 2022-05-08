@@ -244,8 +244,11 @@
       let volumeCtrl = document.createElement('audio'); // Defaults to 1 (100%)
       let volumeBtn = volumeCtrl.querySelector("#volume"); // Sets the `volumeCtrl` (audio) Element to the actual volume button
 
-      for (let btnState = 1; btnState <= 8; btnState++) {
-        if (btnState === 1 || 2) {
+      for (let btnState = 0; btnState <= 8; btnState++) {
+        if (btnState === 0) {
+          // Define the button to be removed after Region setup
+          let removeRegionYesBtn = document.querySelector(".yes_button .base").remove();
+        } else if (btnState === 1 || 2) {
           let yesBtnDiv = `<div class="yes_button base">Yes</div>`;
           yesButton.innerHTML = yesBtnDiv;
 
