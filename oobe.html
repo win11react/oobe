@@ -56,8 +56,9 @@
 
         let innerFillSetup = document.querySelector(".inner_fill_setup");
         if (btnState == 0) {
+          yesButton.addEventListener("click", (event) => {
           let regionHTML = `
-          <div class="yes_button base">Yes</div>
+            <div class="yes_button base">Yes</div>
             <div class="left">
               <img alt="left image" id="left_img" src="window11_oobe_region.png" />
             </div>
@@ -258,6 +259,7 @@
           
 
           innerFillSetup.innerHTML = regionHTML;
+            });
         }
         if (btnState === 1 || 2) {
           let yesBtnDiv = `<div class="yes_button base">Yes</div>`;
