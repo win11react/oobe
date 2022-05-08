@@ -221,6 +221,9 @@
     </div>
 
     <script>
+      // Define the button to be removed after Region setup
+      document.querySelector(".yes_button .base").remove();
+
       // Define button queries for the `Next`, `Yes`, and other OOBE buttons
       // These are the non-blocked-off buttons, eg. just regular link text, without styling updated
       let skipButton = document.querySelector(".skip_button"); // Used on the `Let's name your PC` and the `Let's customize your experience` pages to allow skipping the step, instead of just clicking the `Yes` button to skip
@@ -244,13 +247,8 @@
       let volumeCtrl = document.createElement('audio'); // Defaults to 1 (100%)
       let volumeBtn = volumeCtrl.querySelector("#volume"); // Sets the `volumeCtrl` (audio) Element to the actual volume button
 
-      for (let btnState = 0; btnState <= 4; btnState++) {
-        if (btnState === 0) {
-          return;
-        } else if (btnState === 1 || 2) {
-          // Define the button to be removed after Region setup
-          document.querySelector(".yes_button .base").remove();
-
+      for (let btnState = 1; btnState <= 4; btnState++) {
+        if (btnState === 1 || 2) {
           let yesBtnDiv = `<div class="yes_button base">Yes</div>`;
           yesButton.innerHTML = yesBtnDiv;
 
