@@ -246,6 +246,9 @@
 
       for (let btnState = 1; btnState <= 8; btnState++) {
         if (btnState === 1 || 2) {
+          let yesBtnDiv = `<div class="yes_button base">Yes</div>`;
+          yesButton.innerHTML = yesBtnDiv;
+
           yesButton.addEventListener("click", (event) => {
             if (btnState === 1) {
               listOOBE.style.top = "132px";
@@ -277,12 +280,15 @@
             }
           });
         } else if (btnState === 3 || 4) {
+          let nextBtnDiv = `<div class="next_button base">Next</div>`;
+          nextButton.innerHTML = nextBtnDiv;
+
           nextButton.addEventListener("click", (event) => {
             if (btnState === 3) {
               nextButton.style.opacity = "0";
               setTimeout(() => {
                 right.classList.remove("align");
-                let rightInner = `  <div class="header">Let's name your PC <br><div  class="header_sml">Make it yours with unique name that's easy to recognize when connecting to it from other devices. Your PC will restart after you name it.</div>   <div class="OOBE_input"><input type="text" spellcheck="false" placeholder="Name" id="OOBE_input"> <img id="cancel_input" src="https://win11.blueedge.me/img/icon/ui/close.png"></div><div  class="text_sml_black">No more than 15 character <br>No spaces or any of the following special characters:<br>"/\\ [ ] : | < >+ = ; , ?</div></div>`;
+                let rightInner = `  <div class="header">Let's name your PC <br><div class="header_sml">Make it yours with unique name that's easy to recognize when connecting to it from other devices. Your PC will restart after you name it.</div>   <div class="OOBE_input"><input type="text" spellcheck="false" placeholder="Name" id="OOBE_input"> <img id="cancel_input" src="https://win11.blueedge.me/img/icon/ui/close.png"></div><div  class="text_sml_black">No more than 15 character <br>No spaces or any of the following special characters:<br>"/\\ [ ] : | < >+ = ; , ?</div></div>`;
                 right.innerHTML = rightInner;
                 let leftCont = `                <img id="left_img" src="window11_oobe_name.png">`;
                 left.innerHTML = leftCont;
@@ -290,6 +296,9 @@
                 headerSml.style.top = "70px";
                 nextButton.style.opacity = "1";
               }, 6000);
+
+              let skipBtnDiv = `<div class="skip_button base">Skip for now</div>`;
+              skipButton.innerHTML = skipBtnDiv;
 
               skipButton.addEventListener("click", (event) => {
                 return;
