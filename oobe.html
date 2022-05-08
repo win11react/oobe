@@ -258,10 +258,10 @@
 
           
 
-          innerFillSetup.innerHTML = regionHTML;
+          let test = innerFillSetup.innerHTML += regionHTML;
 
           yesButton.addEventListener("click", (event) => {
-            return;
+            return test;
           });
         }
         if (btnState === 1 || 2) {
