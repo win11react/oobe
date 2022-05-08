@@ -40,6 +40,7 @@
       let volumeBtn = volumeCtrl.querySelector("#volume"); // Sets the `volumeCtrl` (audio) Element to the actual volume button
 
       for (let btnState = 0; btnState <= 4; btnState++) {
+        let mainHTMLLoad = document.querySelector('body.main');
         let mainHTML = `
         <div class="white_blur_layer">
           <div class="setup_settings">
@@ -50,14 +51,13 @@
           </div>
         `;
 
-        let mainHTMLLoad = document.querySelector('.main');
-
-        let test = mainHTMLLoad.innerHTML += mainHTML;
+        mainHTMLLoad.innerHTML = mainHTML;
 
         let innerFillSetup = document.querySelector(".inner_fill_setup");
+
         if (btnState === 0) {
           let regionHTML = `
-            <div class="yes_button base">Yes</div>
+            <div class="yes_button">Yes</div>
             <div class="left">
               <img alt="left image" id="left_img" src="window11_oobe_region.png" />
             </div>
@@ -256,15 +256,11 @@
             </div>
           `;
 
-          
-
-          innerFillSetup.innerHTML += test + regionHTML;
+          innerFillSetup.innerHTML = regionHTML;
 
           yesButton.addEventListener("click", (event) => {
-            return;
           });
-        }
-        if (btnState === 1 || 2) {
+        } else if (btnState === 1 || 2) {
           let yesBtnDiv = `<div class="yes_button base">Yes</div>`;
           yesButton.innerHTML = yesBtnDiv;
 
