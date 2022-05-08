@@ -48,6 +48,7 @@
               <img alt="volume" id="volume" src="window11_oobe_volume.png" />
             </div>
             <div class="inner_fill_setup">
+              <div class="yes_button">Yes</div>
             </div>
         `;
 
@@ -56,13 +57,9 @@
         let innerFillSetup = document.querySelector(".inner_fill_setup");
 
         if (btnState === 0 || 1 || 2) {
-          let yesBtnDiv = `<div class="yes_button">Yes</div>`;
-          yesButton.innerHTML = yesBtnDiv;
-
           yesButton.addEventListener("click", (event) => {
             if (btnState === 0) {
               let regionHTML = `
-                <div class="yes_button">Yes</div>
                 <div class="left">
                   <img alt="left image" id="left_img" src="window11_oobe_region.png" />
                 </div>
