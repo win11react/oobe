@@ -52,10 +52,10 @@
 
         let mainHTMLLoad = document.querySelector('.main');
 
-        mainHTMLLoad.innerHTML += mainHTML;
+        let test = mainHTMLLoad.innerHTML += mainHTML;
 
         let innerFillSetup = document.querySelector(".inner_fill_setup");
-        if (btnState == 0) {
+        if (btnState === 0) {
           let regionHTML = `
             <div class="yes_button base">Yes</div>
             <div class="left">
@@ -258,7 +258,7 @@
 
           
 
-          innerFillSetup.innerHTML += regionHTML;
+          innerFillSetup.innerHTML += test + regionHTML;
 
           yesButton.addEventListener("click", (event) => {
             return;
